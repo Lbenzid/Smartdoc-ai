@@ -55,19 +55,20 @@ Génération de réponses pertinentes
 
 # LLMs testés:
                
-Modèle  	     Langue	Poids  	Temps de réponse	  Support du français 	     Remarques
-GPT-4o (API)  	🇫🇷/🇺🇸    	         cloud 	   Rapide    	     Excellent 	Très pertinent mais dépend d'un quota payant
-TinyLlama-1.1B	🇺🇸 uniquement  	 ~1.1B  	   Moyen      	 Limité      	Léger, rapide, mais mauvaise compréhension du français
-Mistral-7B     	       🇫🇷/🇺🇸      	~7B    	  Lent (CPU)      	  Bon support   	    Recommandé si GPU ou version quantisée disponible
-
+| Modèle            | Langue       | Poids  | Temps de réponse | Support du français | Remarques                                             |
+|-------------------|--------------|--------|------------------|----------------------|--------------------------------------------------------|
+| GPT-4o (API)      | 🇫🇷 / 🇺🇸      | Cloud  |  Rapide           |  Excellent          | Très pertinent mais dépend d’un quota payant          |
+| TinyLlama-1.1B    | 🇺🇸 seulement | ~1.1B  |  Moyen           |  Limité             | Léger, rapide, mais mauvaise compréhension du français |
+| Mistral-7B        | 🇫🇷 / 🇺🇸      | ~7B    | Lent (CPU)       | Bon support          | Recommandé si GPU ou version quantisé disponible       |
 
 # Problèmes rencontrés et solutions apportées: 
 
-Problème       	                                 Solution apportée
-Quota API GPT-4o dépassé     	                 Migration vers LLM open-source (TinyLlama puis Mistral)
-Problèmes de push (error 408, broken pipe)   	 Nettoyage Git, suppression fichiers lourds, push via SSH
-Prompt trop long pour les LLMs       	         Limitation à 2500 caractères et top 3 documents (FAISS)
-Modèle ne supporte pas le français    	         Test de plusieurs LLMs jusqu'à Mistral pour support natif
+| Problème                                      | Solution apportée                                         |
+|-----------------------------------------------|------------------------------------------------------------|
+| Quota API GPT-4o dépassé                      | Migration vers LLM open-source (TinyLlama puis Mistral)   |
+| Problèmes de push GitHub (error 408, pipe…)   | Nettoyage Git, suppression fichiers lourds, push via SSH  |
+| Prompt trop long pour les LLMs                | Limitation à 2500 caractères et top 3 documents (FAISS)   |
+| Modèle ne comprend pas le français            | Test de plusieurs LLMs jusqu’à Mistral pour support natif |
 
 # Exécution du projet (en local) :
 
